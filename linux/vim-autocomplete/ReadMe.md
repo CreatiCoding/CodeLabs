@@ -38,7 +38,7 @@ struct Person {
 ```c
 #include <stdio.h>
 int main(){
-	external // 	
+	// 여기서 external까지 입력후 탭을 눌러 보세요 :)
 	return 0;
 }
 ```
@@ -53,3 +53,8 @@ int main(){
 set mouse=a
 set nu
 ```
+
+### Step 4. complete screen
+
+![image](https://user-images.githubusercontent.com/33514304/49080614-93dc5f80-f287-11e8-943d-b3b4e02f3be4.png)
+
