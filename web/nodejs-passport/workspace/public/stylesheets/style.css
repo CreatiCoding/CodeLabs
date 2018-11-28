@@ -1,0 +1,35 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+.item {
+  display: inline-flex;
+}
+.text-item {
+  width: 100px;
+}
+.text-id {
+}
+
+.text-pw {
+}
+
+.form {
+  font-size: 25px;
+  width: 250px;
+}
+.login-btn {
+  font-size: 20px;
+  width: 100%;
+  margin: 10px 0 10px 0;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}

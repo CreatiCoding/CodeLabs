@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <% include ./header %>
+    <h1><%= title %></h1>
+    <form method="POST" action="/login" class="form">
+      <div class="item">
+        <span class="text-item text-id">id</span
+        ><input class="login-input" type="text" name="id" />
+      </div>
+      <br />
+      <div class="item">
+        <span class="text-item text-pw">pw</span
+        ><input class="login-input" type="password" name="pw" />
+      </div>
+      <div><button type="submit" class="login-btn">Login</button></div>
+    </form>
+  </body>
+  <script>
+    // var data = JSON.parse(document.querySelector("#data").innerHTML);
+    // console.log(data);
+    // if (data.user !== undefined)
+    //   document.querySelector("#user-name").innerHTML = data.user.name;
+  </script>
+</html>
