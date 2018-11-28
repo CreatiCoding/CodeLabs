@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <div style="display:none;" id="data"><%= data %></div>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <% include ./header %>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <p class="show" id="quest-mode">
+      <a href="/login">login</a> / <a href="/join">join</a>
+    </p>
+    <p class="hide" id="user-mode"><a href="/logout">logout</a></p>
+  </body>
+  <script>
+    var data = JSON.parse(document.querySelector("#data").innerHTML);
+    console.log(data);
+    if (data.user !== undefined) {
+      document.querySelector("#user-name").innerHTML = data.user.name;
+      document.querySelector("#user-mode").className = "show";
+      document.querySelector("#quest-mode").className = "hide";
+    } else {
+      document.querySelector("#user-name").innerHTML = "손";
+      document.querySelector("#user-mode").className = "hide";
+      document.querySelector("#quest-mode").className = "show";
+    }
+  </script>
+</html>
