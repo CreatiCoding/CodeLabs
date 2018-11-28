@@ -12,6 +12,7 @@ Node.js 에서 이제는 표준이 되어버린 인증(회원 인증 및 권한 
 
 - Node.js v11.2.0
 - npm 6.4.1
+- need modules: yarn, nodemon 
 
 ---
 
