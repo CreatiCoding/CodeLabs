@@ -20,10 +20,15 @@
       <div><button type="submit" class="login-btn">Login</button></div>
     </form>
   </body>
+
   <script>
-    // var data = JSON.parse(document.querySelector("#data").innerHTML);
-    // console.log(data);
-    // if (data.user !== undefined)
-    //   document.querySelector("#user-name").innerHTML = data.user.name;
+    var data = JSON.parse(document.querySelector("#data").innerHTML);
+    console.log(data);
+    if (data.user !== undefined) {
+      alert("이미 로그인 중 입니다.")
+      window.location.href="/home";
+    }
+  </script>
+  
   </script>
 </html>
