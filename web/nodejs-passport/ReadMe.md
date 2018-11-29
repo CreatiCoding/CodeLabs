@@ -15,10 +15,10 @@ Node.js 에서 이제는 표준이 되어버린 인증(회원 인증 및 권한 
 ## 1. 실습 환경
 
 - Node.js v11.2.0
+
 - npm 6.4.1
-- node module: yarn, nodemon, passport, passport-local, etc.
 
-
+- need modules: yarn, nodemon, passport, passport-local, etc.
 
 ## 2. 실습
 
