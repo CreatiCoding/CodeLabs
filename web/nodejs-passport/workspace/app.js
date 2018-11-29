@@ -13,7 +13,11 @@ var user = {
   pw: "p@ssw0rd!@#$",
   name: "creco"
 };
+
 var indexRouter = require("./routes/index");
+// TODO: STEP1-02 passport 라우터에 passport를 등록
+indexRouter.setPassport(passport);
+
 var usersRouter = require("./routes/users");
 
 var app = express();
@@ -28,7 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-// TODO: STEP1-02 express session 설정
+// TODO: STEP1-03 express session 설정
 app.use(
   session({
     secret: "session secret key",
@@ -37,11 +41,11 @@ app.use(
   })
 );
 
-// TODO: STEP1-03 passport 초기화
+// TODO: STEP1-04 passport 초기화
 app.use(passport.initialize());
 app.use(passport.session());
 
-// TODO: STEP1-04 passport 로그인 인증 과정
+// TODO: STEP1-05 passport 로그인 인증 과정
 // prettier-ignore
 passport.use(
   new LocalStrategy({ usernameField: "id", passwordField: "pw" }, function(id, pw, done){
@@ -61,7 +65,7 @@ passport.use(
   })
 );
 
-// TODO: STEP1-05 passport serialize and deserialize
+// TODO: STEP1-06 passport serialize and deserialize
 // serialize   from LocalStrategy to session each login request
 // deserialize from session       to request each any request
 self.passport.serializeUser(function(user, done) {
