@@ -1,14 +1,23 @@
 var express = require("express");
 var router = express.Router();
 
+// TODO: STEP2-01 login get 함수 등록
+router.get("/login", function(req, res) {
+  res.render("login", {
+    title: "Login to Tutorial Nodejs Passport"
+  });
+});
+
+// TODO: STEP2-02 logout post 함수 작성
+router.get("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/");
+});
+
 /* GET home page. */
-router.get("/", function(req, res, next) {
-  var user = {
-    id: "hello",
-    name: "tester",
-    email: "test@test.com"
-  };
-  var user2 = undefined;
+router.get("/home", function(req, res) {
+  var user = req.user;
+  console.log(req.user);
   res.render("index", {
     title: "Tutorial Nodejs Passport",
     data: JSON.stringify({
@@ -17,11 +26,9 @@ router.get("/", function(req, res, next) {
   });
 });
 
-/* GET login page. */
-router.get("/login", function(req, res, next) {
-  res.render("login", {
-    title: "Login to Tutorial Nodejs Passport"
-  });
+/* GET root page. */
+router.get("/", function(req, res) {
+  res.redirect("/home");
 });
 
 module.exports = router;
