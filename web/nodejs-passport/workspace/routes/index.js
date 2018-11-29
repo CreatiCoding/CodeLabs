@@ -2,19 +2,24 @@ var express = require("express");
 var router = express.Router();
 
 /* GET home page. */
-router.get("/", function(req, res, next) {
+router.get("/home", function(req, res, next) {
+  // temporary code
   var user = {
     id: "hello",
     name: "tester",
     email: "test@test.com"
   };
-  var user2 = undefined;
   res.render("index", {
     title: "Tutorial Nodejs Passport",
     data: JSON.stringify({
       user: typeof user === "undefined" ? undefined : user
     })
   });
+});
+
+/* GET root page. */
+router.get("/", function(req, res, next) {
+  res.redirect("/");
 });
 
 /* GET login page. */
