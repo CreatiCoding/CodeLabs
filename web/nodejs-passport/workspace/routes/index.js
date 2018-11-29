@@ -1,30 +1,23 @@
 var express = require("express");
 var router = express.Router();
 
-// TODO: post login
-router.post(
-  "/login",
-  self.passport.authenticate("local", {
-    successRedirect: "/home",
-    failureRedirect: "/login"
-  })
-);
-
-/* GET login page. */
-router.get("/login", function(req, res, next) {
+// TODO: STEP2-01 login get 함수 등록
+router.get("/login", function(req, res) {
   res.render("login", {
     title: "Login to Tutorial Nodejs Passport"
   });
 });
 
+// TODO: STEP2-02 logout post 함수 작성
+router.get("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/");
+});
+
 /* GET home page. */
-router.get("/home", function(req, res, next) {
-  // temporary code
-  var user = {
-    id: "hello",
-    name: "tester",
-    email: "test@test.com"
-  };
+router.get("/home", function(req, res) {
+  var user = req.user;
+  console.log(req.user);
   res.render("index", {
     title: "Tutorial Nodejs Passport",
     data: JSON.stringify({
@@ -34,8 +27,8 @@ router.get("/home", function(req, res, next) {
 });
 
 /* GET root page. */
-router.get("/", function(req, res, next) {
-  res.redirect("/");
+router.get("/", function(req, res) {
+  res.redirect("/home");
 });
 
 module.exports = router;
