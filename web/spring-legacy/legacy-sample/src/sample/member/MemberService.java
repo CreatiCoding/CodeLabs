@@ -16,4 +16,6 @@ public interface MemberService {
 	
 	void delete(int id);
 
+	List<Member> listByName(String name);
+
 }

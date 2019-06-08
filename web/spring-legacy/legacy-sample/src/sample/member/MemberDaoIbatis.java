@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
-import org.springframework.stereotype.Repository;
+// import org.springframework.stereotype.Repository;
 
 import sample.domain.Member;
 
-@Repository
+// @Repository
 public class MemberDaoIbatis implements MemberDao {
 	
 	@Autowired SqlMapClientTemplate sqlMapClientTemplate;
@@ -34,4 +34,8 @@ public class MemberDaoIbatis implements MemberDao {
 		sqlMapClientTemplate.update("update", member);
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<Member> listByName(String name) {
+		return null;
+	}
 }
