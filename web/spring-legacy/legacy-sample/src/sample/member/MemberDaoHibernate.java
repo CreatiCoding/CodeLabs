@@ -7,9 +7,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.classic.Session;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.hibernate.criterion.MatchMode;
 
 import sample.domain.Member;
 
+@Repository
 public class MemberDaoHibernate implements MemberDao{
 	
 	@Autowired SessionFactory sessionFactory;
@@ -45,6 +48,12 @@ public class MemberDaoHibernate implements MemberDao{
 
 	private Session getSession() {
 		return sessionFactory.getCurrentSession();
+	}
+	@SuppressWarnings("unchecked")
+	public List<Member> listByName(String name) {
+		return getCriteria()
+		.add(Restrictions.like("name", name, MatchMode.ANYWHERE))
+		.list();
 	}
 	
 	

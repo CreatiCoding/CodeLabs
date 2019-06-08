@@ -24,14 +24,15 @@
         <context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
     </context:component-scan>
     
-    <jdbc:embedded-database id="dataSource" type="HSQL">
+    <!-- <jdbc:embedded-database id="dataSource" type="HSQL">
     	<jdbc:script location="classpath:/script/member_table.sql"/>
-    </jdbc:embedded-database>
+    </jdbc:embedded-database> -->
+	<jdbc:embedded-database id="dataSource" type="HSQL" />
     	
     <tx:annotation-driven />
     
     <!-- iBatis -->
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+    <!-- <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
  		p:dataSource-ref="dataSource" />
  		
    	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
@@ -41,9 +42,9 @@
 	
 	<bean id="sqlMapClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
 		<constructor-arg name="sqlMapClient" ref="sqlMapClient"/>
-	</bean>
+	</bean> -->
 
-	<!-- Hibernate
+	<!-- Hibernate -->
     <bean id="transactionManager"
           class="org.springframework.orm.hibernate3.HibernateTransactionManager"
           p:sessionFactory-ref="sessionFactory"/>
@@ -60,6 +61,6 @@
             </props>
         </property>
     </bean>
-     -->
+    
 
 </beans>

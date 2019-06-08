@@ -11,6 +11,10 @@ uri="http://www.springframework.org/tags/form"%>
   <body>
     <a href="<c:url value='/app/member/form'/>">Add</a>
     <h2>Member List</h2>
+    <form action="/legacy-sample/app/member/search">
+      <input type="text" name="name" />
+      <input type="submit" value="search" />
+    </form>
     <ul>
       <c:forEach items="${list}" var="member">
         <li>${member.name}</li>

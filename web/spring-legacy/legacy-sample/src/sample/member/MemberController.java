@@ -27,6 +27,12 @@ public class MemberController {
 		model.addAttribute("member", new Member());
 	}
 	
+	@RequestMapping(value = "/search")
+		public String search(String name, Model model) {
+		model.addAttribute("list", memberService.listByName(name));
+		return "member/list"; 
+	}
+
 	@RequestMapping(method = RequestMethod.POST)
 	public String formSubmit(@Valid Member member, BindingResult result){
 		if(result.hasErrors())

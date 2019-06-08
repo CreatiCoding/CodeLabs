@@ -16,4 +16,6 @@ public interface MemberDao {
 	
 	void delete(int id);
 
+	List<Member> listByName(String name);
+
 }

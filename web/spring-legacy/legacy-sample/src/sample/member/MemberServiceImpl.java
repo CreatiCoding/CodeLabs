@@ -36,4 +36,8 @@ public class MemberServiceImpl implements MemberService {
 		dao.update(member);
 	}
 	
+	public List<Member> listByName(String name) {
+		return dao.listByName(name);
+	}
+
 }
